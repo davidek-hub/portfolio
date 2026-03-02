@@ -1,33 +1,236 @@
-.skeleton-loader {
-    position: relative;
-    height: 320px;
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Moje Portfolio</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(135deg, #0f0f0f, #141414);
+  color: #eaeaea;
+  line-height: 1.6;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 18px;
+  text-align: center;
+  background: rgba(20,20,20,0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #222;
+  z-index: 1000;
+}
+
+nav a {
+  color: #bbb;
+  text-decoration: none;
+  margin: 0 25px;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+nav a:hover {
+  color: #00e0ff;
+}
+
+.hero {
+  margin-top: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 100px 20px;
+}
+
+.hero-text {
+  max-width: 550px;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+  background: linear-gradient(90deg, #00e0ff, #7b2cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-text p {
+  color: #aaa;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.hero img {
+  width: 340px;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 20px;
+  background: #1a1a1a;
+  border: 1px solid #222;
+  transition: 0.4s ease;
+}
+
+.hero img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px rgba(0,224,255,0.2);
+}
+
+section {
+  padding: 100px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 50px;
+  font-size: 30px;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 20px;
+  border: 1px solid #222;
+  transition: 0.4s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  border-color: #00e0ff;
+  box-shadow: 0 15px 35px rgba(0,224,255,0.15);
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-top: 15px; /* obrázek pod textem */
+  background: #222;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+  color: white;
+}
+
+.card p {
+  color: #aaa;
+}
+
+footer {
+  background: #111;
+  color: #666;
+  text-align: center;
+  padding: 25px;
+  border-top: 1px solid #222;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
   }
-  .skeleton-loader:after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    background-repeat: no-repeat;
-    background-image: linear-gradient( 90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100% ), 
-        radial-gradient( circle 48px at 48px 48px, #aaaaaa 100%, transparent 0 ), 
-        linear-gradient(#aaaaaa 16px, transparent 0), 
-        linear-gradient(#aaaaaa 16px, transparent 0), 
-        linear-gradient(#aaaaaa 16px, transparent 0), 
-        linear-gradient(#aaaaaa 16px, transparent 0), 
-        linear-gradient(#aaaaaa 16px, transparent 0), 
-        linear-gradient(#aaaaaa 16px, transparent 0), 
-        linear-gradient(#aaaaaa 16px, transparent 0), 
-      linear-gradient(#ffffff 100%, transparent 0);
-    background-size: 264px 100%, 96px 96px, 128px 16px, 256px 16px, 496px 16px, 496px 16px, 496px 16px, 496px 16px, 496px 16px, 100% 100%;
-    background-position: 0 0 , 16px 16px, 128px 40px, 128px 72px, 16px 128px, 16px 160px, 16px 192px, 16px 224px, 16px 256px, 0 0;
-    animation: skeleton-animation 2000ms infinite;
+
+  .hero img {
+    margin-top: 40px;
   }
-  
-  @keyframes skeleton-animation {
-    to {
-      background-position: 100% 0, 16px 16px, 128px 40px, 128px 72px, 16px 128px, 16px 160px, 16px 192px, 16px 224px, 16px 256px, 0 0;
-    }
-  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a href="#home">Domů</a>
+  <a href="#projects">Webovky</a>
+  <a href="#big-projects">Design</a>
+  <a href="#contact">Kontakt</a>
+</nav>
+
+<section id="home" class="hero">
+  <div class="hero-text">
+    <h1>David Volgemut</h1>
+    <p>Web Developer | Student | Grafik</p>
+    <p>začínající web developer a designer</p>
+  </div>
+
+  <div>
+    <img src="https://via.placeholder.com/340" alt="Moje fotka">
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Design</h2>
+  <div class="projects">
+    <div class="card">
+      <h3>Projekt 1</h3>
+      <p>Popis projektu a použité technologie.</p>
+      <img src="https://via.placeholder.com/260x150" alt="Projekt 1">
+    </div>
+    <div class="card">
+      <h3>Projekt 2</h3>
+      <p>Popis projektu a použité technologie.</p>
+      <img src="https://via.placeholder.com/260x150" alt="Projekt 2">
+    </div>
+    <div class="card">
+      <h3>Projekt 3</h3>
+      <p>Popis projektu a použité technologie.</p>
+      <img src="https://via.placeholder.com/260x150" alt="Projekt 3">
+    </div>
+  </div>
+</section>
+
+<section id="big-projects">
+  <h2>Webovky</h2>
+  <div class="projects">
+    <div class="card">
+      <h3>Webová aplikace</h3>
+      <p>Komplexní projekt s backendem a databází.</p>
+      <img src="https://via.placeholder.com/260x150" alt="Velký projekt 1">
+    </div>
+    <div class="card">
+      <h3>E-shop</h3>
+      <p>Plně funkční e-commerce řešení.</p>
+      <img src="https://via.placeholder.com/260x150" alt="Velký projekt 2">
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Kontakt</h2>
+  <p style="text-align:center; color:#aaa;">Email: david.volgemut@educanet.cz</p>
+</section>
+
+<footer>
+  David Volgemut 2.A
+</footer>
+
+</body>
+</html>
