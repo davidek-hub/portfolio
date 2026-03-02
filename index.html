@@ -169,7 +169,7 @@ footer {
 
 <nav>
   <a href="#home">Domů</a>
-  <a href="#projects">Designy</a>
+  <a href="#projects">Design</a>
   <a href="#big-projects">Webovky</a>
   <a href="#contact">Kontakt</a>
 </nav>
@@ -196,12 +196,12 @@ footer {
     </div>
     <div class="card">
       <h3>Branding (logo)</h3>
-      <p>vytvoření loga a branding</p>
+      <p>Vytvoření loga a branding</p>
       <img src="Radiance Retreat black.png" alt="Projekt 2" onclick="openLightbox(this.src)">
     </div>
     <div class="card">
-      <h3>vektorizování</h3>
-      <p>převytvážení loga ve vektorové grafice</p>
+      <h3>Vektorizace</h3>
+      <p>Převytvážení loga ve vektorové grafice</p>
       <img src="lolko logo.png" alt="Projekt 3" onclick="openLightbox(this.src)">
     </div>
   </div>
@@ -212,14 +212,14 @@ footer {
   <div class="projects">
     <div class="card">
       <h3>Webovka Barbershop</h3>
-      <p>kompletní web obsahující:
+      <p>Kompletní web obsahující:
         instagramem s příspěvky, loga a plakáty </p>
       <img src="barbershop web.png" alt="barbershop" onclick="openLightbox(this.src)">
     </div>
     <div class="card">
       <h3>Instagram v boothstrapu</h3>
       <p>Napodobení instagramu v boothstrapu</p>
-      <img src="instagram boothstrap.png" alt="Velký projekt 2" onclick="openLightbox(this.src)">
+      <img src="instagram boothstrap.png" alt="Boothstrap" onclick="openLightbox(this.src)">
     </div>
   </div>
 </section>
@@ -245,10 +245,10 @@ function openLightbox(src) {
     lb.style.display = "flex";
     lbImg.src = src;
 
-    // Aktivuje Fullscreen mód prohlížeče
     if (lb.requestFullscreen) {
         lb.requestFullscreen();
-    } else if (lb.webkitRequestFullscreen) { // Safari
+    } else if (lb.webkitRequestFullscreen) 
+    {
         lb.webkitRequestFullscreen();
     }
 }
@@ -257,7 +257,6 @@ function closeLightbox() {
     const lb = document.getElementById("lightbox");
     lb.style.display = "none";
 
-    // Vypne Fullscreen mód při zavření
     if (document.fullscreenElement) {
         document.exitFullscreen();
     }
