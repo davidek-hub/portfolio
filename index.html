@@ -231,6 +231,42 @@ footer {
 <footer>
   David Volgemut 2.A
 </footer>
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img" src="" alt="">
+</div>
 
+<script>
+function openLightbox(src) {
+    const lb = document.getElementById("lightbox");
+    const lbImg = document.getElementById("lightbox-img");
+   
+    lb.style.display = "flex";
+    lbImg.src = src;
+
+    // Aktivuje Fullscreen mód prohlížeče
+    if (lb.requestFullscreen) {
+        lb.requestFullscreen();
+    } else if (lb.webkitRequestFullscreen) { // Safari
+        lb.webkitRequestFullscreen();
+    }
+}
+
+function closeLightbox() {
+    const lb = document.getElementById("lightbox");
+    lb.style.display = "none";
+
+    // Vypne Fullscreen mód při zavření
+    if (document.fullscreenElement) {
+        document.exitFullscreen();
+    }
+}
+
+document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") {
+        closeLightbox();
+    }
+});
+</script>
 </body>
 </html>
