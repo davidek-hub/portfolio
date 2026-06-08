@@ -1,0 +1,73 @@
+﻿body {
+    background-color: #f0e6d2;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    user-select: none;
+}
+
+.cookie-wrapper {
+    position: relative;
+    display: inline-block;
+    margin: 20px auto;
+}
+
+.main-cookie {
+    font-size: 80px;
+    background: none;
+    border: 5px solid #8b4513;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.1s;
+    width: 150px;
+    height: 150px;
+    outline: none;
+}
+
+.main-cookie:hover {
+    transform: scale(1.1);
+}
+
+.main-cookie:active {
+    transform: scale(0.95);
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#obchod {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    min-height: 80px;
+}
+
+.floating-popup {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: #8b4513;
+    pointer-events: none;
+    animation: floatUp 0.8s ease-out forwards;
+}
+
+@keyframes floatUp {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) translateY(-60px);
+    }
+}
